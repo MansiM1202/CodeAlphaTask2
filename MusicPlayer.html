@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Music Player</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #a8edea, #fed6e3);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .player {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 300px;
+    }
+
+    .song-title {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .controls button {
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 50%;
+      background: #007bff;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .controls button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="player">
+    <div class="song-title" id="songTitle">Hanuman Chalisa</div>
+    <audio id="audio" src="https://ravalwebs.github.io/hanumanchalisa/mp3/Shri%20Hanuman%20Chalisa.mp3"></audio>
+    <div class="controls">
+      <button onclick="playMusic()">▶️</button>
+      <button onclick="pauseMusic()">⏸️</button>
+      <button onclick="stopMusic()">⏹️</button>
+    </div>
+  </div>
+
+  <script>
+    const audio = document.getElementById("audio");
+
+    function playMusic() {
+      audio.play();
+    }
+
+    function pauseMusic() {
+      audio.pause();
+    }
+
+    function stopMusic() {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  </script>
+</body>
+</html>
